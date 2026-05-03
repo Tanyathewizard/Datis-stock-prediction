@@ -1,0 +1,229 @@
+name=failure.html
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Failure Analysis - Executive Intel</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#081225",
+                        "accent-purple": "#A855F7",
+                        "accent-emerald": "#34D399"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: #111C36;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-white font-['Inter'] min-h-screen">
+    <!-- UNIFIED SIDEBAR NAVIGATION -->
+    <aside
+        class="fixed left-0 top-0 h-screen w-64 z-40 bg-slate-900/80 backdrop-blur-lg border-r border-white/5 shadow-2xl flex flex-col font-medium">
+        <div class="p-6">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-8 h-8 bg-accent-purple rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white"
+                        style="font-variation-settings: 'FILL' 1;">terminal</span>
+                </div>
+                <div>
+                    <div class="text-lg font-bold tracking-tighter text-white uppercase">EXECUTIVE INTEL</div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Institutional Core</div>
+                </div>
+            </div>
+            <nav class="space-y-1">
+                <a href="./main.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="./deep_analysis.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">monitoring</span>
+                    <span>Market Analysis</span>
+                </a>
+                <a href="./portfolio.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">account_balance_wallet</span>
+                    <span>Portfolio</span>
+                </a>
+                <a href="./news.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">article</span>
+                    <span>News</span>
+                </a>
+                <a href="./on_chain.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">link</span>
+                    <span>On Chain</span>
+                </a>
+                <a href="./stimulator.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">science</span>
+                    <span>Stimulator</span>
+                </a>
+                <!-- ACTIVE STATE -->
+                <a href="./failure.html"
+                    class="flex items-center space-x-3 text-red-400 border-r-2 border-red-400 bg-red-400/5 py-3 px-6 -mx-6 transition-all duration-200">
+                    <span class="material-symbols-outlined">warning</span>
+                    <span>Failure Analysis</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="mt-auto p-6 space-y-4">
+            <button onclick="toggleTheme()"
+                class="w-full bg-accent-purple text-white font-bold py-3 rounded flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity">
+                <span class="material-symbols-outlined text-[20px]">brightness_6</span>
+                <span class="uppercase text-sm tracking-wide">Dark / Light</span>
+            </button>
+            <div class="pt-4 border-t border-white/5 space-y-1">
+                <a class="flex items-center space-x-3 text-slate-400 py-2 hover:text-white transition-colors" href="#">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="text-sm">Support</span>
+                </a>
+                <a class="flex items-center space-x-3 text-slate-400 py-2 hover:text-white transition-colors" href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="text-sm">Settings</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 min-h-screen p-8">
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold mb-2">Failure Analysis</h1>
+            <p class="text-slate-400">System error tracking and predictive failure detection</p>
+        </div>
+
+        <!-- System Health -->
+        <div class="grid grid-cols-12 gap-6 mb-8">
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 glass-card rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">System Health</p>
+                <p class="text-3xl font-bold text-accent-emerald">98.2%</p>
+                <div class="w-full h-2 bg-slate-800 rounded-full mt-3 overflow-hidden">
+                    <div class="h-full bg-accent-emerald" style="width: 98.2%;"></div>
+                </div>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 glass-card rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">Uptime (24h)</p>
+                <p class="text-3xl font-bold text-accent-emerald">99.98%</p>
+                <p class="text-[10px] text-slate-400 mt-2">2 incidents logged</p>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 glass-card rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">Active Alerts</p>
+                <p class="text-3xl font-bold text-orange-400">3</p>
+                <p class="text-[10px] text-slate-400 mt-2">Low severity</p>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 glass-card rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">MTTR</p>
+                <p class="text-3xl font-bold text-blue-400">14m</p>
+                <p class="text-[10px] text-slate-400 mt-2">Mean time to recovery</p>
+            </div>
+        </div>
+
+        <!-- Error Log -->
+        <h2 class="text-2xl font-bold mb-6">Recent Errors & Issues</h2>
+        <div class="space-y-4">
+            <!-- Error 1 -->
+            <div class="glass-card rounded-xl p-6 border-l-4 border-red-500">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-red-400">API Rate Limit Exceeded</h3>
+                        <p class="text-[10px] text-slate-400 mt-1">Data Feed Service</p>
+                    </div>
+                    <span class="text-[10px] px-2 py-1 bg-red-500/10 text-red-400 rounded">2h ago</span>
+                </div>
+                <p class="text-sm text-slate-300 mb-3">Incoming requests exceeded configured threshold of 10,000
+                    req/min. System auto-scaled to handle load.</p>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400">Status:</span>
+                    <span class="text-[10px] px-2 py-1 bg-accent-emerald/10 text-accent-emerald rounded">Resolved</span>
+                </div>
+            </div>
+
+            <!-- Error 2 -->
+            <div class="glass-card rounded-xl p-6 border-l-4 border-orange-500">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-orange-400">Database Connection Pool Depleted</h3>
+                        <p class="text-[10px] text-slate-400 mt-1">PostgreSQL Primary</p>
+                    </div>
+                    <span class="text-[10px] px-2 py-1 bg-orange-500/10 text-orange-400 rounded">4h ago</span>
+                </div>
+                <p class="text-sm text-slate-300 mb-3">Connection pool reached maximum capacity during market spike.
+                    Failover to replica completed successfully.</p>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400">Status:</span>
+                    <span class="text-[10px] px-2 py-1 bg-accent-emerald/10 text-accent-emerald rounded">Resolved</span>
+                </div>
+            </div>
+
+            <!-- Error 3 -->
+            <div class="glass-card rounded-xl p-6 border-l-4 border-yellow-500">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-yellow-400">High Memory Usage Warning</h3>
+                        <p class="text-[10px] text-slate-400 mt-1">Redis Cache Node-3</p>
+                    </div>
+                    <span class="text-[10px] px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded">7h ago</span>
+                </div>
+                <p class="text-sm text-slate-300 mb-3">Memory utilization at 87% due to market data accumulation.
+                    Automatic cache eviction policy triggered.</p>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400">Status:</span>
+                    <span class="text-[10px] px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded">Monitoring</span>
+                </div>
+            </div>
+
+            <!-- Error 4 -->
+            <div class="glass-card rounded-xl p-6 border-l-4 border-blue-500 opacity-50">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="text-lg font-bold text-blue-400">Predicted: Network Latency Spike</h3>
+                        <p class="text-[10px] text-slate-400 mt-1">ML Anomaly Detection</p>
+                    </div>
+                    <span class="text-[10px] px-2 py-1 bg-blue-500/10 text-blue-400 rounded">Predictive</span>
+                </div>
+                <p class="text-sm text-slate-300 mb-3">AI model predicts 76% probability of network congestion in next
+                    12 hours based on historical patterns.</p>
+                <div class="flex items-center gap-2">
+                    <span class="text-[10px] text-slate-400">Status:</span>
+                    <span class="text-[10px] px-2 py-1 bg-blue-500/10 text-blue-400 rounded">Preventive Measures
+                        Active</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</body>
+
+</html>

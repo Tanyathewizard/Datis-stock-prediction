@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Portfolio - Executive Intel</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "trading-bg": "#081225",
+                        "trading-card": "#111C36",
+                        "trading-purple": "#A855F7",
+                        "trading-emerald": "#34D399"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-card {
+            background: rgba(17, 28, 54, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+
+<body class="bg-trading-bg text-white font-['Inter'] min-h-screen">
+    <!-- UNIFIED SIDEBAR NAVIGATION -->
+    <aside
+        class="fixed left-0 top-0 h-screen w-64 z-40 bg-surface-container-lowest/80 backdrop-blur-lg border-r border-white/5 shadow-2xl flex flex-col font-medium">
+        <div class="p-6">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-8 h-8 bg-trading-purple rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white"
+                        style="font-variation-settings: 'FILL' 1;">terminal</span>
+                </div>
+                <div>
+                    <div class="text-lg font-space font-bold tracking-tighter text-white uppercase">EXECUTIVE INTEL
+                    </div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em] font-space">Institutional Core
+                    </div>
+                </div>
+            </div>
+            <nav class="space-y-1">
+                <a href="./main.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="./deep_analysis.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">monitoring</span>
+                    <span>Market Analysis</span>
+                </a>
+                <!-- ACTIVE STATE -->
+                <a href="./portfolio.html"
+                    class="flex items-center space-x-3 text-trading-purple border-r-2 border-trading-purple bg-trading-purple/5 py-3 px-6 -mx-6 transition-all duration-200">
+                    <span class="material-symbols-outlined">account_balance_wallet</span>
+                    <span>Portfolio</span>
+                </a>
+                <a href="./news.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">article</span>
+                    <span>News</span>
+                </a>
+                <a href="./on_chain.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">link</span>
+                    <span>On Chain</span>
+                </a>
+                <a href="./stimulator.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">science</span>
+                    <span>Stimulator</span>
+                </a>
+                <a href="./failure.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">warning</span>
+                    <span>Failure Analysis</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="mt-auto p-6 space-y-4">
+            <button onclick="toggleTheme()"
+                class="w-full bg-trading-purple text-white font-bold py-3 rounded flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity">
+                <span class="material-symbols-outlined text-[20px]">brightness_6</span>
+                <span class="uppercase text-sm tracking-wide">Dark / Light</span>
+            </button>
+            <div class="pt-4 border-t border-white/5 space-y-1">
+                <a class="flex items-center space-x-3 text-slate-400 py-2 hover:text-white transition-colors" href="#">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="text-sm">Support</span>
+                </a>
+                <a class="flex items-center space-x-3 text-slate-400 py-2 hover:text-white transition-colors" href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="text-sm">Settings</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="ml-64 min-h-screen p-8">
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold mb-2">Portfolio</h1>
+            <p class="text-slate-400">Manage your institutional crypto assets</p>
+        </div>
+
+        <!-- Total Value Card -->
+        <div class="glass-card rounded-xl p-8 mb-8">
+            <p class="text-slate-400 text-sm mb-2">TOTAL PORTFOLIO VALUE</p>
+            <div class="flex items-baseline gap-3 mb-6">
+                <span class="text-5xl font-bold">$42,650.80</span>
+                <span class="text-slate-400">USD</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <div
+                    class="flex items-center bg-trading-emerald/10 px-4 py-2 rounded-full border border-trading-emerald/20">
+                    <span class="material-symbols-outlined text-trading-emerald">trending_up</span>
+                    <span class="text-trading-emerald text-sm font-mono ml-2">+5.24%</span>
+                </div>
+                <span class="text-slate-400 text-sm">LAST 24 HOURS</span>
+            </div>
+        </div>
+
+        <!-- Positions Grid -->
+        <div class="grid grid-cols-12 gap-6 mb-8">
+            <div class="col-span-12">
+                <h2 class="text-2xl font-bold mb-6">Current Positions</h2>
+            </div>
+            <div class="col-span-12 lg:col-span-4 glass-card rounded-xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-slate-400 text-sm">Bitcoin</p>
+                        <p class="text-2xl font-bold">0.42 BTC</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-[#f7931a]/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#f7931a]"
+                            style="font-variation-settings: 'FILL' 1;">currency_bitcoin</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-slate-400">$26,450.12</span>
+                    <span class="text-trading-emerald text-sm">+12.4%</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 lg:col-span-4 glass-card rounded-xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-slate-400 text-sm">Ethereum</p>
+                        <p class="text-2xl font-bold">4.5 ETH</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-[#627eea]/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[#627eea]"
+                            style="font-variation-settings: 'FILL' 1;">eco</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-slate-400">$12,140.20</span>
+                    <span class="text-trading-emerald text-sm">+3.8%</span>
+                </div>
+            </div>
+
+            <div class="col-span-12 lg:col-span-4 glass-card rounded-xl p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <p class="text-slate-400 text-sm">Solana</p>
+                        <p class="text-2xl font-bold">25.0 SOL</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-trading-purple/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-trading-purple"
+                            style="font-variation-settings: 'FILL' 1;">token</span>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-slate-400">$4,060.48</span>
+                    <span class="text-red-400 text-sm">-1.2%</span>
+                </div>
+            </div>
+            <div class="col-span-12">
+                <h2 class="text-xl font-bold mb-4 mt-8">Quick Trade</h2>
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="flex gap-4">
+                        <select id="trade-symbol"
+                            class="flex-1 bg-white/10 border border-white/20 rounded px-3 py-2 text-white">
+                            <option>BTC</option>
+                            <option>ETH</option>
+                            <option>SOL</option>
+                        </select>
+                        <input id="trade-shares" type="number" placeholder="Shares"
+                            class="flex-1 bg-white/10 border border-white/20 rounded px-3 py-2 text-white" value="0.01">
+                        <input id="trade-price" type="number" placeholder="Price $"
+                            class="flex-1 bg-white/10 border border-white/20 rounded px-3 py-2 text-white"
+                            value="60000">
+                        <button onclick="doTrade('BUY')"
+                            class="bg-trading-emerald text-black px-6 py-2 font-bold rounded hover:opacity-90">BUY</button>
+                        <button onclick="doTrade('SELL')"
+                            class="bg-red-500 text-white px-6 py-2 font-bold rounded hover:opacity-90">SELL</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function doTrade(action) {
+            const symbol = document.getElementById('trade-symbol').value;
+            const shares = parseFloat(document.getElementById('trade-shares').value);
+            const price = parseFloat(document.getElementById('trade-price').value);
+            try {
+                const res = await fetch('/api/portfolio/trade', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        symbol,
+                        action,
+                        shares,
+                        price
+                    })
+                });
+                const data = await res.json();
+                alert(data.message + ' | New PnL: $' + data.overall_pnl);
+                loadPortfolio(); // Refresh
+            } catch (e) {
+                alert('Trade failed: ' + e);
+            }
+        }
+        // existing loadPortfolio + toggleTheme...
+    </script>
+    // Live Portfolio Connection async function loadPortfolio() { try { const res = await fetch('/api/portfolio'); const
+    data = await res.json(); // Update total value document.querySelector('span.text-5xl').textContent = '$' +
+    data.total_value.toLocaleString();
+    document.querySelector('span.text-trading-emerald.text-sm.font-mono').textContent = '+' + data.pnl_pct + '%';
+    console.log('Portfolio loaded:', data); } catch (e) { console.error('Portfolio fetch failed:', e); } } //
+    Auto-refresh every 10s loadPortfolio();
+    setInterval(loadPortfolio, 10000); function toggleTheme() { document.documentElement.classList.toggle('dark'); }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,234 @@
+name=stimulator.html
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stimulator - Executive Intel</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#081225",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #081225;
+            color: #FFFFFF;
+        }
+
+        .card_background {
+            background-color: #111C36;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="font-['Inter'] antialiased min-h-screen">
+    <!-- UNIFIED SIDEBAR NAVIGATION -->
+    <aside
+        class="fixed left-0 top-0 h-screen w-64 z-40 bg-slate-900/80 backdrop-blur-lg border-r border-white/5 shadow-2xl flex flex-col font-medium">
+        <div class="p-6">
+            <div class="flex items-center space-x-3 mb-8">
+                <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white"
+                        style="font-variation-settings: 'FILL' 1;">terminal</span>
+                </div>
+                <div>
+                    <div class="text-lg font-bold tracking-tighter text-white uppercase">EXECUTIVE INTEL</div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em]">Institutional Core</div>
+                </div>
+            </div>
+            <nav class="space-y-1">
+                <a href="./main.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="./deep_analysis.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">monitoring</span>
+                    <span>Market Analysis</span>
+                </a>
+                <a href="./portfolio.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">account_balance_wallet</span>
+                    <span>Portfolio</span>
+                </a>
+                <a href="./news.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">article</span>
+                    <span>News</span>
+                </a>
+                <a href="./on_chain.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">link</span>
+                    <span>On Chain</span>
+                </a>
+                <!-- ACTIVE STATE -->
+                <a href="./stimulator.html"
+                    class="flex items-center space-x-3 text-purple-400 border-r-2 border-purple-400 bg-purple-400/5 py-3 px-6 -mx-6 transition-all duration-200">
+                    <span class="material-symbols-outlined">science</span>
+                    <span>Stimulator</span>
+                </a>
+                <a href="./failure.html"
+                    class="flex items-center space-x-3 text-slate-400 py-3 px-6 -mx-6 hover:bg-white/5 hover:text-white transition-colors duration-200">
+                    <span class="material-symbols-outlined">warning</span>
+                    <span>Failure Analysis</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="mt-auto p-6 space-y-4">
+            <button onclick="toggleTheme()"
+                class="w-full bg-purple-600 text-white font-bold py-3 rounded flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity">
+                <span class="material-symbols-outlined text-[20px]">brightness_6</span>
+                <span class="uppercase text-sm tracking-wide">Dark / Light</span>
+            </button>
+            <div class="pt-4 border-t border-white/5 space-y-1">
+                <a class="flex items-center space-x-3 text-slate-400 py-2 hover:text-white transition-colors" href="#">
+                    <span class="material-symbols-outlined">help</span>
+                    <span class="text-sm">Support</span>
+                </a>
+                <a class="flex items-center space-x-3 text-slate-400 py-2 hover:text-white transition-colors" href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="text-sm">Settings</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="ml-64 min-h-screen p-8">
+        <div class="mb-12">
+            <h1 class="text-4xl font-bold mb-2">Market Simulator</h1>
+            <p class="text-slate-400">Backtest strategies and simulate market conditions with historical data</p>
+        </div>
+
+        <!-- Simulator Controls -->
+        <div class="card_background rounded-xl p-8 mb-8">
+            <h2 class="text-2xl font-bold mb-6">Simulation Configuration</h2>
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                    <label class="block text-sm font-bold mb-2">Asset</label>
+                    <select class="w-full bg-slate-800 border border-white/10 rounded px-4 py-2 text-white">
+                        <option>Bitcoin (BTC)</option>
+                        <option>Ethereum (ETH)</option>
+                        <option>Solana (SOL)</option>
+                    </select>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                    <label class="block text-sm font-bold mb-2">Start Date</label>
+                    <input type="date"
+                        class="w-full bg-slate-800 border border-white/10 rounded px-4 py-2 text-white" />
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                    <label class="block text-sm font-bold mb-2">End Date</label>
+                    <input type="date"
+                        class="w-full bg-slate-800 border border-white/10 rounded px-4 py-2 text-white" />
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-3">
+                    <label class="block text-sm font-bold mb-2">Initial Capital</label>
+                    <input type="number" value="100000"
+                        class="w-full bg-slate-800 border border-white/10 rounded px-4 py-2 text-white" />
+                </div>
+                <div class="col-span-12">
+                    <button
+                        class="bg-purple-600 text-white font-bold px-8 py-3 rounded hover:opacity-90 transition-opacity">
+                        Run Simulation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="grid grid-cols-12 gap-6">
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 card_background rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">Total Return</p>
+                <p class="text-3xl font-bold text-green-400">+24.8%</p>
+                <p class="text-[10px] text-slate-400 mt-2">$124,800 → $124,800</p>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 card_background rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">Max Drawdown</p>
+                <p class="text-3xl font-bold text-orange-400">-15.2%</p>
+                <p class="text-[10px] text-slate-400 mt-2">Peak to trough decline</p>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 card_background rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">Sharpe Ratio</p>
+                <p class="text-3xl font-bold text-blue-400">1.82</p>
+                <p class="text-[10px] text-slate-400 mt-2">Risk-adjusted returns</p>
+            </div>
+            <div class="col-span-12 md:col-span-6 lg:col-span-3 card_background rounded-xl p-6">
+                <p class="text-slate-400 text-sm mb-2">Win Rate</p>
+                <p class="text-3xl font-bold text-accent-emerald">62.4%</p>
+                <p class="text-[10px] text-slate-400 mt-2">Profitable trades ratio</p>
+            </div>
+        </div>
+
+        <!-- Trade Log -->
+        <div class="mt-8 card_background rounded-xl overflow-hidden">
+            <div class="px-8 py-4 border-b border-white/10">
+                <h3 class="text-xl font-bold">Trade History</h3>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead class="bg-slate-800 text-slate-300">
+                        <tr>
+                            <th class="px-6 py-3 text-left">Date</th>
+                            <th class="px-6 py-3 text-left">Type</th>
+                            <th class="px-6 py-3 text-right">Price</th>
+                            <th class="px-6 py-3 text-right">Amount</th>
+                            <th class="px-6 py-3 text-right">P&L</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t border-white/10">
+                            <td class="px-6 py-3">2024-04-19</td>
+                            <td class="px-6 py-3">BUY</td>
+                            <td class="px-6 py-3 text-right">$64,200</td>
+                            <td class="px-6 py-3 text-right">0.5 BTC</td>
+                            <td class="px-6 py-3 text-right text-green-400">+$450</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="px-6 py-3">2024-04-18</td>
+                            <td class="px-6 py-3">SELL</td>
+                            <td class="px-6 py-3 text-right">$63,800</td>
+                            <td class="px-6 py-3 text-right">0.25 BTC</td>
+                            <td class="px-6 py-3 text-right text-green-400">+$320</td>
+                        </tr>
+                        <tr class="border-t border-white/10">
+                            <td class="px-6 py-3">2024-04-17</td>
+                            <td class="px-6 py-3">BUY</td>
+                            <td class="px-6 py-3 text-right">$62,900</td>
+                            <td class="px-6 py-3 text-right">1.0 BTC</td>
+                            <td class="px-6 py-3 text-right text-red-400">-$280</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</body>
+
+</html>
