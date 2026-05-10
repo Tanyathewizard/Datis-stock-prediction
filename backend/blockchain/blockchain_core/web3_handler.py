@@ -26,8 +26,8 @@ logger = logging.getLogger("datis.web3")
 
 # ── Try importing web3; fall back gracefully if not installed ────────────────
 try:
-    from web3 import Web3
-    from web3.middleware import geth_poa_middleware
+    from web3 import Web3  # type: ignore
+    from web3.middleware import geth_poa_middleware  # type: ignore
     WEB3_AVAILABLE = True
 except ImportError:
     WEB3_AVAILABLE = False

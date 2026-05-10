@@ -31,6 +31,7 @@ from .routes.explain import router as explain_router
 from .routes.whatif import router as whatif_router
 from .routes.persona import router as persona_router
 from .routes.portfolio import router as portfolio_router
+from .routes.wallet import router as wallet_router
 from .routes.failure import router as failure_router
 from .routes.blockchain import router as blockchain_router
 from .routes.history import router as history_router
@@ -80,6 +81,7 @@ app.include_router(explain_router, prefix="/api")
 app.include_router(whatif_router, prefix="/api")
 app.include_router(persona_router, prefix="/api")
 app.include_router(portfolio_router, prefix="/api")
+app.include_router(wallet_router)
 app.include_router(failure_router, prefix="/api")
 app.include_router(blockchain_router, prefix="/api")
 app.include_router(history_router, prefix="/api")

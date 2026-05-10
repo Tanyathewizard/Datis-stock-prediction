@@ -1,3 +1,4 @@
+CONFIG_PY = '''
 import os
 from pathlib import Path
 
@@ -1525,6 +1526,20 @@ async def startup_event():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+'''
+
+# ════════════════════════════════════════════════════════════════════════════
+# FILE: requirements.txt
+# ════════════════════════════════════════════════════════════════════════════
+
+REQUIREMENTS_TXT = '''
+fastapi
+uvicorn[standard]
+torch
+scikit-learn
+numpy
+pandas
+transformers
 '''
 
 # ════════════════════════════════════════════════════════════════════════════
